@@ -1,10 +1,10 @@
 let page
 module.exports = {
     before: browser => page = browser.page.wantedQueriesPage(),
-    beforeEach: browser => page.navigate(),
-    after: browser => page.end(),
+    beforeEach: () => page.navigate(),
+    after: () => page.end(),
 
-    'Enter Wanted - Test Boundaries': browser => {
+    'Enter Wanted - Test Boundaries': () => {
         let checkError = (pageObject, parameters) => {
             pageObject
                 .clearValue(parameters.selector)
